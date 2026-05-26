@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pandas
+pandasai
+pandasai_litellm
+langchain_core
+langchain_litellm
+pydantic
+matplotlib
