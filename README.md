@@ -82,17 +82,17 @@ DASHSCOPE_API_KEY=你的通义千问API密钥
 ## 项目结构
 
 ```
-├── src/                    # 前端源码
-│   ├── components/         # Vue 组件
-│   │   └── Table/         # 表格相关组件
-│   ├── views/             # 页面视图
-│   ├── stores/            # Pinia 状态管理
-│   └── utils/             # 工具函数
-├── cosai/                  # 后端源码
-│   ├── tools/             # AI 分析工具
-│   ├── tongyi_chat.py     # 通义千问集成
-│   └── main.py            # FastAPI 主入口
-└── public/                # 静态资源
+├── src/                    前端源码
+│   ├── components/         Vue 组件
+│   │   └── Table/          表格核心组件 (Cell, ColumnHeader, RowHeader 等)
+│   ├── views/              页面视图
+│   ├── stores/             Pinia 状态管理
+│   └── utils/              工具函数
+├── cosai/                  后端源码
+│   ├── tools/              AI 分析工具 (数据预处理、线性回归)
+│   ├── tongyi_chat.py      通义千问集成
+│   └── main.py             FastAPI 主入口
+└── public/                 静态资源
 ```
 
 ## API 端点
