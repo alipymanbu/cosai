@@ -87,7 +87,7 @@ CosAI 是一款面向数据分析场景的**智能电子表格 Web 应用**，�
 | **pandasai** | AI 数据分析核心引擎（自然语言 → 代码 → 执行） |
 | **pandasai_litellm** | pandasai 的 LLM 适配层，统一多模型接入 |
 | **langchain_core + langchain_litellm** | 意图识别链路（modify / report / question） |
-| **大语言模型（LLM）** | 底层大模型，通过 LiteLLM 统一接入（支持 OpenAI / 通义千问 / DeepSeek / 智谱等多种厂商） |
+| **大语言模型（LLM）** | 底层大模型，通过 LiteLLM 统一接入（支持多家主流厂商） |
 | **Pandas + NumPy** | 数据处理（pandasai 调用） |
 | **matplotlib** | 图表生成（pandasai 调用） |
 | **Pydantic** | 数据校验 |
@@ -179,7 +179,7 @@ CosAI 是一款面向数据分析场景的**智能电子表格 Web 应用**，�
 
 - **Node.js** >= 18
 - **Python** >= 3.9
-- 大模型 API Key（支持 OpenAI / 通义千问 / DeepSeek / 智谱等任一厂商，前往对应平台申请即可）
+- 大模型 API Key（支持任意主流厂商，前往对应平台申请即可）
 
 ### 1. 克隆仓库
 
