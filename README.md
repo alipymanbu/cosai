@@ -22,7 +22,7 @@
 
 ## 📖 项目简介
 
-CosAI 是一款面向数据分析场景的**智能电子表格 Web 应用**，在传统表格编辑能力之上，深度集成 AI 大模型（基于通义千问），实现：
+CosAI 是一款面向数据分析场景的**智能电子表格 Web 应用**，在传统表格编辑能力之上，深度集成 AI 大模型，实现：
 
 - 📊 **可视化表格编辑** —— 类 Excel 操作体验，支持单元格、行/列、选择、拖拽等完整编辑能力
 - 🤖 **AI 数据分析助手** —— 自然语言对话即可完成数据修改、统计分析与图表生成
@@ -87,7 +87,7 @@ CosAI 是一款面向数据分析场景的**智能电子表格 Web 应用**，�
 | **pandasai** | AI 数据分析核心引擎（自然语言 → 代码 → 执行） |
 | **pandasai_litellm** | pandasai 的 LLM 适配层，统一多模型接入 |
 | **langchain_core + langchain_litellm** | 意图识别链路（modify / report / question） |
-| **通义千问（qwen3.5-plus）** | 底层大模型，通过 LiteLLM 接入 |
+| **大语言模型（LLM）** | 底层大模型，通过 LiteLLM 统一接入（支持 OpenAI / 通义千问 / DeepSeek / 智谱等多种厂商） |
 | **Pandas + NumPy** | 数据处理（pandasai 调用） |
 | **matplotlib** | 图表生成（pandasai 调用） |
 | **Pydantic** | 数据校验 |
@@ -101,8 +101,8 @@ CosAI 是一款面向数据分析场景的**智能电子表格 Web 应用**，�
 ┌─────────────┐         ┌──────────────────┐         ┌─────────────────┐
 │  前端 (Vue 3)│         │  后端 (FastAPI)  │         │   大模型 (LLM)  │
 │             │         │                  │         │                 │
-│  表格编辑   │ ──────▶ │  api.py          │ ──────▶ │  通义千问       │
-│  Monaco代码 │   CSV   │   ├─ 意图识别     │   HTTP  │  qwen3.5-plus   │
+│  表格编辑   │ ──────▶ │  api.py          │ ──────▶ │  大语言模型     │
+│  Monaco代码 │   CSV   │   ├─ 意图识别     │   HTTP  │  (LLM)         │
 │  ECharts    │ ◀────── │   ├─ pandasai    │ ◀────── │  (via LiteLLM)  │
 │             │  Chart  │   ├─ matplotlib  │   Resp  │                 │
 └─────────────┘         └──────────────────┘         └─────────────────┘
@@ -149,7 +149,7 @@ CosAI 是一款面向数据分析场景的**智能电子表格 Web 应用**，�
 
 | 工作内容 | 说明 |
 |---------|------|
-| 🔧 **AI 引擎集成** | 通过 `pandasai_litellm` 接入通义千问 qwen3.5-plus |
+| 🔧 **AI 引擎集成** | 通过 `pandasai_litellm` + LiteLLM 统一接入大语言模型（支持多家厂商） |
 | 🧭 **意图识别路由** | 基于 `langchain_core` + Pydantic 实现 modify / report / question 三分类 |
 | 🔌 **前后端打通** | FastAPI + Vue 联动，实现表格 ↔ DataFrame ↔ CSV 双向流转 |
 | 📊 **可视化闭环** | pandasai 生成的 matplotlib 图表自动暴露为静态资源，前端 ECharts 渲染 |
@@ -179,7 +179,7 @@ CosAI 是一款面向数据分析场景的**智能电子表格 Web 应用**，�
 
 - **Node.js** >= 18
 - **Python** >= 3.9
-- 通义千问 API Key（[阿里云百炼平台](https://bailian.console.aliyun.com/) 申请）
+- 大模型 API Key（支持 OpenAI / 通义千问 / DeepSeek / 智谱等任一厂商，前往对应平台申请即可）
 
 ### 1. 克隆仓库
 
